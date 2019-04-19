@@ -59,7 +59,14 @@ function showValues( obj ) {
   Write a for in loop that loops over the object and changes any value that is greater than 10 to 0. 
   Return the updated object.
 */
-// function greaterThan10 ( obj)
+function greaterThan10 (obj) {
+  for(let key in obj) {
+    if(obj[key] > 10){
+      obj[key] = 0;
+    }
+  }
+  return obj;
+}
 
 //Code Here
 
@@ -184,6 +191,15 @@ for(let key in deleteTheBigNumbers) {
   Return the updated object.
 */
 
+function startsWithK(obj) {
+  for(let key in obj){
+    if(key.indexOf('k') === 0) {
+      delete obj[key];
+    }
+  }
+  return obj;
+}
+
 //Code Here
 
 
@@ -198,6 +214,16 @@ for(let key in deleteTheBigNumbers) {
 
   (hint: the method includes() may be of use...)
 */
+
+function hiddenTreasure (obj) {
+  for(let key in obj) {
+    if (!obj[key].includes('treasure')) {
+      delete obj[key];
+    }
+  }
+  return obj;
+}
+
 
 //Code Here
 
