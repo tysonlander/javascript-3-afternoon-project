@@ -40,9 +40,16 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  var string = '';
+  for(let key in obj) {
+    string += obj[key]
+    console.log(string);
+  } return string;
+  // let newString = arr.reduce( function(total, element) {
+  //   return total + element
+  // })
+  // return newString;
 }
-
 
 
 ////////// PROBLEM 2 //////////
@@ -52,6 +59,7 @@ function showValues( obj ) {
   Write a for in loop that loops over the object and changes any value that is greater than 10 to 0. 
   Return the updated object.
 */
+// function greaterThan10 ( obj)
 
 //Code Here
 
@@ -65,6 +73,12 @@ function showValues( obj ) {
   Return the updated object.
 */
 
+function double (obj) {
+  for(let key in obj) {
+    obj[key] = obj[key] * 2
+  }
+  return obj;
+}
 //Code Here
 
 
@@ -75,10 +89,20 @@ function showValues( obj ) {
   Write a function called secrets that will take in an object.
   Create an empty string variable.
   Write a for in loop that loops over the object.
+
   If the property name starts with an 'sh', concatenate the value to the string variable.
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
+function secrets(obj) {
+  var string = "";
+  for(let key in obj) {
+    if(key.indexOf('sh') === 0){
+      string += obj[key];
+    }
+  }
+  return string;
+}
 //Code Here
 
 
@@ -110,6 +134,14 @@ function showValues( obj ) {
   Delete the property password and return the object.
 */
 
+function removePassword(obj) {
+  for(let key in obj) {
+    if(key === "password"){
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 //Code Here
 
 
@@ -128,6 +160,16 @@ var deleteTheBigNumbers = {
 /*
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
+
+
+for(let key in deleteTheBigNumbers) {
+  if(deleteTheBigNumbers[key] > 100) {
+    delete deleteTheBigNumbers[key]
+  }
+}
+
+
+
 
 //Code Here
 
