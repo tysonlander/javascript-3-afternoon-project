@@ -21,6 +21,8 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
+let {color, make, model, year} = carDetails;
+
 //Code Here
 
 
@@ -34,6 +36,7 @@ var carDetails = {
 */
 
 function greeting( obj ) {
+  var {firstName, lastName, title} = obj;
   //Code Here
   
   // Do not edit the code below.
@@ -53,6 +56,10 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
+var totalPopulation = ({utah, california, texas, arizona}) => {
+  return utah + california + texas + arizona;
+}
+
 //Code Here
 
 
@@ -66,6 +73,12 @@ function greeting( obj ) {
   Use object destructuring to save the property values to new variables. 
   Push these new variables to an array and return the array. 
 */
+
+var ingredients = ({carb, fat, protein}) => {
+  var newArray = [];
+  newArray.push(carb, fat, protein);
+  return newArray;
+}
 
 //Code Here
 
@@ -84,6 +97,18 @@ function greeting( obj ) {
   The object properties will be named first, second, and third and their values will be numbers.
   Find the smallest number of the three and return that number.
 */
+var largeNumbers = ( {first, second, third} ) => {
+  if (first < second && third) {
+    return first;
+  } else if (second < first && third) {
+    return second;
+  } else {
+    return third;
+  }
+}
+
+
+
 
 //Code Here
 
@@ -96,6 +121,19 @@ function greeting( obj ) {
   The object properties will be named a, b, and c and their values will be arrays of numbers.
   Find the longest array and return that array.
 */
+
+var numberGroups = ( {a, b, c} ) => {
+  var aQty = a.length;
+  var bQty = b.length;
+  var cQty = c.length;
+  if (aQty > bQty && aQty > cQty) {
+    return a;
+  } else if (bQty > aQty && bQty > cQty) {
+    return b;
+  } else {
+    return c;
+  }
+}
 
 //Code Here
 
