@@ -50,6 +50,22 @@ var employees = [
     3. Return the updated employee array.
 */
 
+function employeeUpdater(){
+  for(let i = 0; i < employees.length; i++) {
+    if(employees[i].firstName === "Theo"){
+      delete employees[i];
+    }
+    else if (employees[i].firstName === 'Lorie') {
+      employees[i].department = 'HR';
+    }
+  }
+  return employees;
+  }
+  
+ 
+  // console.log(employees[2].[firstName])
+
+
 //Code Here
 
 
@@ -67,6 +83,18 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array.
     3. Return the updated array.
 */
+function removeDuplicates() {
+  // newArray = array.slice();
+  for(let i = 0; i < workplaceAccidents.length; i++){
+    for(let k = i+1; k < workplaceAccidents.length; k++){
+      if(workplaceAccidents[i] === workplaceAccidents[k]){
+        workplaceAccidents.splice(i, 1);
+        i--;
+      }
+    }
+  }
+  return workplaceAccidents;
+}
 
 //Code Here
 
@@ -97,8 +125,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -137,6 +165,19 @@ var myCar = {
     2. Loop over the accidents array.
     3. Change atFaultForAccident from true to false.
 */
+function recordCleaner (){
+  for(let i = 0; i < myCar.accidents.length; i++){
+    for(let key in myCar.accidents[i]){
+      if(myCar.accidents[i].key === 'atFaultForAccident'){
+        if(key === true){
+          key = false;
+      }
+    }
+  }
+}
+}
+  
+
 
 //Code Here
 
@@ -156,7 +197,16 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
         If the number is even, replace it with 'even'.
     4. Return the modified numsArr.
 */
-
+function looper(){
+  for(let i = 0; i < numsArr.length; i++) {
+    for(let k = 0; k < numsArr[i].length; k++){
+      if (numsArr[i][k] % 2 === 0) {
+        numsArr[i][k] = "even";
+      } else {
+        numsArr[i][k] = "odd";
+      }
+    }
+  }
+  return numsArr;
+}
 //Code Here
-
-
